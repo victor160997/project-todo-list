@@ -7,7 +7,12 @@ function addTarefa(){
     listaTarefas.appendChild(task);
     task.addEventListener('click', pintaCinza);
     function pintaCinza(aleatory){
-        task.style.backgroundColor = 'rgb(128, 128, 128)'
+        if(document.querySelectorAll('.seleciona-tarefa').length === 0){
+            task.classList.add('seleciona-tarefa');
+        } else {
+            document.querySelector('.seleciona-tarefa').classList.remove('seleciona-tarefa');
+            task.classList.add('seleciona-tarefa');
+        }
     }
     document.getElementById('texto-tarefa').value='';
 }
