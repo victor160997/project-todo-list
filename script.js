@@ -14,5 +14,15 @@ function addTarefa(){
             task.classList.add('seleciona-tarefa');
         }
     }
+    task.addEventListener('dblclick', completaTarefa);
+    function completaTarefa(aleatory){
+        //se já possuir a classe, remove ela.
+        //se não possuir, adiciona.
+        if(task.classList.length === 2){
+            task.classList.remove('completed');
+        } else {
+            task.classList.add('completed');
+        }
+    }
     document.getElementById('texto-tarefa').value='';
 }
