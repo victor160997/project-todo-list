@@ -41,4 +41,15 @@ function addTarefa(){
             }
         }
         document.getElementById('texto-tarefa').value='';
+
+        let botaoRemoveFeitos = document.querySelector('#remover-finalizados');
+        botaoRemoveFeitos.addEventListener('click', removeFinalizados);
+        function removeFinalizados(aleatory){
+            let completos = document.querySelectorAll('.completed');
+
+            for(let index = 0; index < completos.length; index += 1){
+                document.querySelector('#lista-tarefas').removeChild(completos[index]);
+            }
+
+        }
 }
